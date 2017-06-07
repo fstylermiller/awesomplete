@@ -56,6 +56,10 @@ var _ = function (input, o) {
 	// Bind events
 
 	this._events = {
+		input: {
+			"input": this.evaluate.bind(this),
+			"blur": this.close.bind(this, { reason: "blur" })
+		},
 		form: {
 			"submit": this.close.bind(this, { reason: "submit" })
 		},
